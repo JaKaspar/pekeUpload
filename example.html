@@ -134,11 +134,11 @@ $().ready(function() {
       onFileError : function (file, data, pos) {
 
       },
-      btnText:'Datei auswählen',
+      /*btnText:'choose file',*/
       showErrorAlerts: true,
-      maxSize: 80000000.00, /* 80MB */
-      errorOnResponse: 'Beim Upload kam es zu einem Fehler.',
-      sizeError: 'File is greater than 8 MB.',
+      maxSize: 2097152.00, /* 2MB */
+      errorOnResponse: 'Error on file upload.',
+      sizeError: 'File is greater than 2 MB.',
     });
 });
 </script>
