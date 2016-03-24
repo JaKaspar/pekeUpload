@@ -1,5 +1,13 @@
+###### changes by me (coming soon)
+
+1. Remove Button
+2. Remove Method
+3. Hide / Show remove Button
+4. Allow / Deny File swith Same name
+
+
 [![NPM](https://nodei.co/npm/pekeupload.png)](https://nodei.co/npm/pekeupload/)
-pekeUpload
+pekeUpload (original version)
 ==========
 ###### What is pekeUpload?
 is a jQuery plugin that allows you to easily add multiple or single file upload functionality to your website. This plugin uses html5 only.
