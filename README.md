@@ -1,9 +1,13 @@
-
-###### changes by me (coming soon)
+## changes by me (coming soon)
 1. Remove Button
 2. Remove Method
 3. Hide / Show remove Button
 4. Allow / Deny File swith Same name
+5. Some internal Changes
+
+## Important (Known Problems)
+1. Bootstrap theme doesn't work very well
+2. Drag and Drop not tested, maybe it make problems
 
 ==========
 ###### pekeUpload (original version npm)
