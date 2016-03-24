@@ -81,7 +81,7 @@ This version has been re-coded from scratch, and include new functionalities and
 | btnText| "Browse files..." | string | Set the text of the upload button |
 | allowedExtensions | "" | "ext1" | Sets the file extensions allowed to upload |
 | invalidExtError | "Invalid File Type" | string | Sets the error message when the file has an unsupported extension |
-| maxSize | 0 | float | Set the file size limit in MB, 0 means no limit |
+| maxSize | 0 | float | Set the file size limit, 0 means no limit (10000000.00 conforms 10 MB) |
 | sizeError | "Size of the file is greather than allowed" | string | Sets the error message when the file is bigger than size allowed |
 | showPreview| true | true/false | Sets if you want to show a preview (if the file is an audio,image or video) on the uploader queue |
 | showFilename | true | true/false | Sets if you want to show the file name on the uploader queue |
