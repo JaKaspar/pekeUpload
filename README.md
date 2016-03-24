@@ -1,11 +1,9 @@
 
 ###### changes by me (coming soon)
-
 1. Remove Button
 2. Remove Method
 3. Hide / Show remove Button
 4. Allow / Deny File swith Same name
-
 ==========
 ###### pekeUpload (original version npm)
 [![NPM](https://nodei.co/npm/pekeupload.png)](https://nodei.co/npm/pekeupload/)
