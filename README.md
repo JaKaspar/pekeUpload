@@ -7,7 +7,7 @@
 	- and more
 
 ## Important (Known Problems)
-1. Bootstrap theme doesn't work very well (mybe a fault with my css file. you can try it)
+1. Bootstrap theme doesn't work very well (maybe a fault with my css file. you can try it)
 2. Preview has styling issues
 
 ==========
