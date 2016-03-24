@@ -1,4 +1,4 @@
-## changes by me (coming soon)
+## changes by me
 1. Added Remove Button
 2. Added OnRemove Method
 3. Hide / Show remove Button for Successfull Upload and Error Upload
