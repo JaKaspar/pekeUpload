@@ -1,14 +1,14 @@
 ## changes by me (coming soon)
-1. Remove Button
-2. Remove Method
-3. Hide / Show remove Button
-4. Allow / Deny File swith Same name
-5. Some internal Changes
+1. Added Remove Button
+2. Added OnRemove Method
+3. Hide / Show remove Button for Successfull Upload and Error Upload
+4. Some internal Changes
+	- onFileError, onFileSuccess, onFileRemove gets the repsonse from the upload.php
+	- and more
 
 ## Important (Known Problems)
-1. Bootstrap theme doesn't work very well
+1. Bootstrap theme doesn't work very well (mybe a fault with my css file. you can try it)
 2. Preview has styling issues
-3. Drag and Drop not tested, maybe it make problems
 
 ==========
 ###### pekeUpload (original version npm)
@@ -85,14 +85,17 @@ This version has been re-coded from scratch, and include new functionalities and
 | showFilename | true | true/false | Sets if you want to show the file name on the uploader queue |
 | showPercent | true | true/false | Sets if you want to show the percent on the uploader queue |
 | showErrorAlerts | true | true/false | Sets if you want to show error alerts on the uploader queue |
+| showRemoveButtonOnSuccess | true | true/false | Shows a remove button on the uploaded file, if the upload was susccessfull |
+| showRemoveButtonOnError | true | true/false | Shows a remove button on the uploaded file, if the upload was not susccessfull |
 | errorOnResponse | "There has been an error uploading your file" | string | Sets the message when the file is uploaded and the response script returns that there is an error but a error message on the response was not found |
 | onSubmit| false | true/false | Gives you the option of upload the files when the files are selected or when you submit the form. |
 | url| "upload.php" | string | Set the url of upload script |
 | data | null | {var1:"value"} | Set POST additional data associated to the file |
 | limit | 0 | integer | Sets the limits of files that an user can uploads, 0 is unlimited |
 | limitError | "You have reached the limit of files that you can upload" | string | Sets the error message when a user tried to upload more files than the limit |
-|  onFileError | function(file,error){} | function(file,error){} | Event triggered when some error ocurs, returns error (string), file (object). file returns file.name and file.size |
-|  onFileSuccess | function(file,data){} | function(file,data){} | Event triggered when the file has been uploaded succesfully, returns data (string), file (object). file returns file.name and file.size |
+|  onFileError | function(file,error,pos){} | function(file,error,pos){} | Event triggered when some error ocurs, return file (object). file returns file.name and file.size, error message (String), pos the upload position |
+|  onFileSuccess | function(file,data){} | function(file,data){} | Event triggered when the file has been uploaded succesfully, returns data (array with strings), file (object). file returns file.name and file.size, pos the upload position |
+|  onFileRemove | function(file,data){} | function(file,data){} | Event triggered when the remove button for a file is clicked, returns data (array with strings. first position is success=1 or =0 , other string depends on your upload.php), file (object). file returns file.name and file.size, pos the upload position |
 
 ###### Sever side script considerations
 
