@@ -7,7 +7,8 @@
 
 ## Important (Known Problems)
 1. Bootstrap theme doesn't work very well
-2. Drag and Drop not tested, maybe it make problems
+2. Preview doesn't work now
+3. Drag and Drop not tested, maybe it make problems
 
 ==========
 ###### pekeUpload (original version npm)
