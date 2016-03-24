@@ -13,7 +13,7 @@ if ($pos === false) {
     die('Restricted access');
 }
 
-  // Define a destination (create a new folder, there to upload the file)
+  // Define a destination
   $uniqid = uniqid();
   $targetFolder = '../uploads'.DIRECTORY_SEPARATOR.$uniqid; // Relative to the root
   while(is_dir($targetFolder)) {
@@ -21,34 +21,45 @@ if ($pos === false) {
     $targetFolder = '../uploads'.DIRECTORY_SEPARATOR.$uniqid;
   }
 
-  mkdir($targetFolder, 0777);
+  define('KB', 1024);
+  define('MB', 1048576);
+  define('GB', 1073741824);
+  define('TB', 1099511627776);
+  
+  $maxFileSize = 2*MB;
 
-  if (!empty($_FILES)) {
+  mkdir($targetFolder, 0777);
+  if (!empty($_FILES) && $_FILES['file']['size'] < $maxFileSize) {
   	$tempFile = $_FILES['file']['tmp_name'];
   	$targetPath = dirname(__FILE__) . '/' . $targetFolder;
   	$targetFile = rtrim($targetPath,'/') . '/' . $_FILES['file']['name'];
 
   	// Validate the file type
-  	//$fileTypes = array('jpg','jpeg','gif','png','txt','zip','swf','exe'); // File extensions
-  	$fileParts = pathinfo($_FILES['file']['name']);
+//  	$fileTypes = array('jpg','jpeg','gif','png','txt','zip','swf','exe'); // File extensions
+
+    $fileParts = pathinfo($_FILES['file']['name']);
   	$response = array ();
-  	 //if (in_array($fileParts['extension'],$fileTypes)) {
-  		move_uploaded_file($tempFile,$targetFile);
-  		$response['success'] = 1;
-  		foreach ($_POST as $key => $value){
-  			$response[$key] = $value;
-  		}
-  		$response['folder'] = $uniqid;
-  		$response['fileName'] = $_FILES['file']['name'];
-  		echo json_encode($response);
-  /*	} else {
-  		$response['success'] = 0;
-  		$response['error'] = 'Invalid file type.';
-  		echo json_encode($response);
-  	 }*/
+//  	  if (in_array($fileParts['extension'],$fileTypes)) {
+    		move_uploaded_file($tempFile,$targetFile);
+    		$response['success'] = 1;
+    		foreach ($_POST as $key => $value){
+    			$response[$key] = $value;
+    		}
+    		$response['folder'] = $uniqid;
+    		$response['fileName'] = $_FILES['file']['name'];
+    		echo json_encode($response);
+/*  	  } else {
+    		$response['success'] = 0;
+    		$response['error'] = 'Invalid file type.';
+    		echo json_encode($response);
+  	  }*/
    }  else {
      $response['success'] = 0;
-     $response['error'] = 'File not uploaded.';
+     if (!empty($_FILES) && $_FILES['file']['size'] >= $maxFileSize) {
+       $response['error'] = 'File is greater than 2 MB.';
+     } else {
+       $response['error'] = 'File not uploaded.';
+     }
      echo json_encode($response);
    }
 ?>
