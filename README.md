@@ -2,7 +2,9 @@
 1. Added Remove Button
 2. Added OnRemove Method
 3. Hide / Show remove Button for Successfull Upload and Error Upload
-4. Some internal Changes
+4. On the dropmode there can be added files with click on zone and with drag and drop
+5. Upload new files in the onSubmit mode, even a upload failed
+6. Some internal Changes
 	- onFileError, onFileSuccess, onFileRemove gets the repsonse from the upload.php
 	- and more
 
