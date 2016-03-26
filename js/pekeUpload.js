@@ -52,9 +52,11 @@
       hasErrors: false,
       init: function() {
         this.replacehtml();
+
         this.uparea.on("click", function() {
           pekeUpload.selectfiles();
         });
+
         ///Handle events when drag
         if (options.dragMode) {
           this.handledragevents();
@@ -62,9 +64,10 @@
           this.handlebuttonevents();
         }
         //Dismiss all warnings
-        $(document).on("click", ".pkwrncl", function() {
+        /*$(document).on("click", ".pkwrncl", function() {
           $(this).parent("div").remove();
-        });
+        });*/
+
         //Bind event if is on Submit
         if (options.onSubmit) {
           this.handleFormSubmission();
@@ -105,7 +108,7 @@
         this.obj.click();
       },
       handlebuttonevents: function() {
-        $(document).on("change", this.obj, function() {
+        $(pekeUpload.obj).change(function(){
           pekeUpload.checkFile(pekeUpload.obj[0].files[0]);
         });
       },
@@ -122,7 +125,7 @@
           e.stopPropagation();
           e.preventDefault();
         });
-        $(document).on("change", this.obj, function() {
+        $(pekeUpload.obj).change(function(){
           pekeUpload.checkFile(pekeUpload.obj[0].files[0]);
         });
         this.uparea.on("dragenter", function(e) {
@@ -240,10 +243,14 @@
         if (options.maxSize == 0) {
           return true;
         }
-        if (file.size > options.maxSize) {
+        try {
+          if (file.size > options.maxSize) {
+            return false;
+          } else {
+            return true;
+          }
+        } catch (err) {
           return false;
-        } else {
-          return true;
         }
       },
       addRow: function(file) {
