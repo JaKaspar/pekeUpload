@@ -109,7 +109,9 @@
       },
       handlebuttonevents: function() {
         $(pekeUpload.obj).change(function(){
-          pekeUpload.checkFile(pekeUpload.obj[0].files[0]);
+          if(typeof pekeUpload.obj[0].files[0] !== "undefined") {
+            pekeUpload.checkFile(pekeUpload.obj[0].files[0]);
+          }
         });
       },
       handledragevents: function() {
@@ -126,7 +128,9 @@
           e.preventDefault();
         });
         $(pekeUpload.obj).change(function(){
-          pekeUpload.checkFile(pekeUpload.obj[0].files[0]);
+          if(typeof pekeUpload.obj[0].files[0] !== "undefined") {
+            pekeUpload.checkFile(pekeUpload.obj[0].files[0]);
+          }
         });
         this.uparea.on("dragenter", function(e) {
           e.stopPropagation();
@@ -351,7 +355,8 @@
                   options.onFileRemove(file, data, pos);
                 });
               }
-
+              console.log(file);
+              console.log(data);
               options.onFileSuccess(file, data, pos);
             } else {
               //pekeUpload.files.splice(pos, 1);
