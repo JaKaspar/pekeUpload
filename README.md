@@ -90,6 +90,9 @@ This version has been re-coded from scratch, and include new functionalities and
 |  onFileError | function(file,error,pos){} | function(file,error,pos){} | Event triggered when some error ocurs, return file (object). file returns file.name and file.size, error message (String), pos the upload position |
 |  onFileSuccess | function(file,data,pos){} | function(file,data,pos){} | Event triggered when the file has been uploaded succesfully, returns data (array with strings), file (object). file returns file.name and file.size, pos the upload position |
 |  onFileRemove | function(file,data,pos){} | function(file,data,pos){} | Event triggered when the remove button for a file is clicked, returns data (array with strings. first position is success=1 or =0 , other string depends on your upload.php), file (object). file returns file.name and file.size, pos the upload position |
+|  maxDimensionsWH  |  0  |  integer  |  Sets max. allowed width or height of image in pixels. 0 = unlimited  |
+|  dimensionsError  |  The picture width or height is greater than allowed  |  string  |  Sets the message when the height and/or width of the picture is greater than the limit  |
+|  dimensionsError  |  The picture width or height is greater than allowed  |  string  |  Sets the message when the height and/or width of the picture is greater than the limit  |
 
 ###### Sever side script considerations
 
