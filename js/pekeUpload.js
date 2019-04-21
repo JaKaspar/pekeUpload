@@ -28,7 +28,7 @@
             maxSize: 0,
             sizeError: "Size of the file is greather than allowed",
             maxDimensionsWH: 0,
-            DimensionsError: "The picture width or height is greater than allowed",
+            dimensionsError: "The picture width or height is greater than allowed",
             showPreview: true,
             showFilename: true,
             showPercent: true,
@@ -280,7 +280,7 @@
                     return options.sizeError;
                 }
                 if (!this.imgSizeOk) {
-                    return options.DimensionsError;
+                    return options.dimensionsError;
                 }
             },
             checkExtension: function(file) {
