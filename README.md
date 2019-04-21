@@ -1,16 +1,8 @@
 ## changes by me
-1. Added Remove Button
-2. Added OnRemove Method
-3. Hide / Show remove Button for Successfull Upload and Error Upload
-4. On the dropmode there can be added files with click on zone and with drag and drop
-5. Upload new files in the onSubmit mode, even a upload failed
-6. Some internal Changes
-	- onFileError, onFileSuccess, onFileRemove gets the repsonse from the upload.php
-	- and more
-
-## Important (Known Problems)
-1. Bootstrap theme doesn't work very well (maybe a fault with my css file. you can try it)
-2. Preview has styling issues
+1. Fixed bootstrap progressbar styling
+2. Added file size validation
+3. Added a few parameters
+4. Enhanced upload.php function
 
 ==========
 ###### pekeUpload (original version npm)
