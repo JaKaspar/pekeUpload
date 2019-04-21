@@ -1,3 +1,4 @@
+v2.1
 ## changes by me
 1. Fixed bootstrap progressbar styling
 2. Added file size validation
