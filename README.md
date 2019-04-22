@@ -1,7 +1,7 @@
-v2.1
+## v2.1
 ## changes by me
 1. Fixed bootstrap progressbar styling
-2. Added file size validation
+2. Added image size validation
 3. Added a few parameters
 4. Enhanced upload.php function
 
